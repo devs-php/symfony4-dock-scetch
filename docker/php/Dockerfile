@@ -1,7 +1,7 @@
 FROM php:7.2-fpm-stretch
 
 RUN set -x \
-    && useradd -m -U -u 1000 devsphp \
+    && useradd -m -U -u 1000 symfony \
     && apt-get update \
     && apt-get install --no-install-recommends --no-install-suggests -q -y \
         libfontconfig1 \
@@ -24,8 +24,11 @@ RUN set -x \
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 COPY ./docker/php/php.ini /usr/local/etc/php/
 
-USER devsphp
+USER symfony
 
-RUN composer global require hirak/prestissimo
+RUN composer global require \
+    hirak/prestissimo \
+    phpstan/phpstan \
+    friendsofphp/php-cs-fixer
 
 WORKDIR /app
