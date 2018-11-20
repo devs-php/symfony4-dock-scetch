@@ -28,6 +28,8 @@ USER symfony
 
 RUN composer global require \
     hirak/prestissimo \
+    
+RUN composer global require \
     phpstan/phpstan \
     friendsofphp/php-cs-fixer
 
