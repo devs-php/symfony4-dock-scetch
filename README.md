@@ -21,7 +21,7 @@ This stack shouldn't be used on production!
 ## Instalation
 
 ```
-wget https://raw.githubusercontent.com/devs-php/symfony4-dock-scetch/master/install.sh
+wget https://raw.githubusercontent.com/devs-php/symfony4-dock-template/master/install.sh
 chmod +x install.sh
 ./install.sh
 ```
